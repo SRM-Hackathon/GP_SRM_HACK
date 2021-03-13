@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline-page</title>
+    <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+    <link rel="icon" href="{{url_for('static', filename= 'image_elements/g-logo-01.png')}}" />
+
+    <!-- <link rel="stylesheet" href="./style_morphing_modal.css"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- {{url_for('static', filename= 'css/timeline_page_css/style.css')}} -->
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/timeline_editor_page_css/style_morphing_modal.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/timeline_page_css/style.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="loading">
+        <img id="loading-image" src="/static/image_elements/svg_gif_elements/ner_loader.gif" alt="Loading..." />
+    </div>
+
+    <img src="/static/image_elements/grease_pencil.png" class="logo" alt="grease-pencil-logo" width="250" id="control_logo_id" />
+
+    <!-- partial:index.partial.html -->
+    <section class="timeline">
+        <button type="submit" class="submit-button-orange" onclick="generate_storyboard()">Generate Storyboard</button>
+        <!-- {% if scene_updation_message == "True" %} 
+        <span></span>
+        {% endif %} -->
+        <ul>
+            {% for dict in content_dict_list %}
+            <li>
+                <div>
+
+                    <time>{{dict.frame}}</time>
+                    <button onclick='editTimeLine("{{dict.count_var |  tojson}}")' class="editButton">
+                        <i class="material-icons">mode_edit</i>
+                    </button>
+                    <div class="discovery flex-item-right">
+                        <h1>BG</h1>
+                        <p>{{dict.background}}</p>
+                    </div>
+                    <div class="scientist">
+                        <h1>Character</h1>
+                        <span>{{dict.characters}}</span>
+                    </div>
+                    <div class="discovery">
+                        <h1>C.Shot</h1>
+                        <p>{{dict.camera_shot}}</p>
+                    </div>
+                    <div class="scientist">
+                        <h1>C.Movement</h1>
+                        <span>{{dict.camera_movement}}</span>
+                    </div>
+
+                    <div class="scientist description">
+                        <h1>Description</h1>
+                        <span>{{dict.short_desc}}</span>
+                    </div>
+
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit" class="submit-button-orange" onclick="generate_storyboard()">Generate Storyboard</button>
+    </section>
+    <!-- partial -->
+    <script src="{{url_for('static', filename= 'js/timeline_page_js/script.js')}}"></script>
+
+    <form action="{{ url_for('timelineEdit') }}" , methods="GET">
+        <input type="submit" id="route_to_timeline" hidden>
+    </form>
+
+    <form action="{{ url_for('storyboardViewer') }}" , methods="GET">
+        <input type="submit" id="route_to_story_board_viewer" hidden>
+    </form>
+</body>
+
+</html>
