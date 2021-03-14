@@ -1,0 +1,115 @@
+<html lang="en" style="overflow-y:scroll;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename= 'image_elements/g-logo-01.png')}}" />
+    <title>Grease Pencil</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #selector {
+            width: 100%;
+            height: 94%;
+            opacity: 25%;
+        }
+        
+        .file_upload {
+            opacity: 0.0;
+            /* IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            /* IE 5-7 */
+            filter: alpha(opacity=0);
+            /* Netscape or and older firefox browsers */
+            -moz-opacity: 0.0;
+            /* older Safari browsers */
+            -khtml-opacity: 0.0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="/static/css/upload_button.css"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/upload_button.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="figma-frame" data-constraint-x="MIN" data-constraint-y="MIN" id="1:3" name="frame-1" style="background-color:rgba(26, 19, 61, 1.0);border-radius:0px;border-width:1px;margin:0px auto;opacity:1;position:relative;transform:rotate(0deg);">
+        <img src="/static/image_elements/grease_pencil.png" class="logo" alt="grease-pencil-logo" width="250" />
+        <div class="figma-rectangle" name="rectangle-1" style="border-radius:0px;border-width:1px;left:0px;opacity:1;position:absolute;top:0px;transform:rotate(0deg);"></div>
+        <div class="figma-group" style="" class="gif-container">
+            <img src='/static/image_elements/svg_gif_elements/bg.gif' id='selector' />
+        </div>
+        <div class="figma-text " name="drag-and-drop-files-here " style="color:rgba(255, 255, 255, 1.0);font-family:Quicksand;font-size:38px;font-weight:400;height:70px;left:750px;letter-spacing:-1%;line-height:auto;opacity:1;position:absolute;text-align:left;text-decoration:NONE;top:437px;transform:rotate(0deg);white-space:pre-wrap;width:428px; "
+            type="TEXT ">Drag and drop files here</div>
+        <div class="figma-text " name="my-uploads " style="color:rgba(255, 255, 255, 1.0);font-family:Quicksand;font-size:25px;font-weight:700;height:43px;letter-spacing:-1%;line-height:auto;opacity:1;position:absolute;text-align:left;text-decoration:NONE;top:57px;transform:rotate(0deg);white-space:pre-wrap;width:253px;"
+            type="TEXT ">My Uploads</div>
+        <div class="figma-text " name="or " style="color:rgba(255, 255, 255, 1.0);font-family:Quicksand;font-size:38px;font-weight:400;height:70px;left:941px;letter-spacing:-1%;line-height:auto;opacity:1;position:absolute;text-align:left;text-decoration:NONE;top:507px;transform:rotate(0deg);white-space:pre-wrap;width:39px; "
+            type="TEXT ">or</div>
+        <!-- <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data"> -->
+        <div class="figma-frame" data-constraint-x="CENTER" data-constraint-y="SCALE" id="1:10" name="group-1" style="background-color:rgba(232, 76, 61, 1.0);border-radius:17px;border-width:1px;height:79px;left:845px;opacity:1;position:absolute;top:575px;transform:rotate(0deg);width:231px;">
+            <div class="figma-text" name="browse-file" style="color:rgba(255, 255, 255, 1.0);font-family:Quicksand;font-size:30px;font-weight:400;height:55px;left:45px;letter-spacing:-1%;line-height:auto;opacity:1;position:absolute;text-align:left;text-decoration:NONE;top:20px;transform:rotate(0deg);white-space:pre-wrap;width:153px;"
+                type="file">Browse file
+                <input type="file" class="file_upload" id="file_upload_id" onchange="timelinepagefunction(event)" />
+            </div>
+        </div>
+        <!-- </form> -->
+        <div class=" figma-frame " id="upload_file_id " data-constraint-x="CENTER " data-constraint-y="SCALE " id="1:18 " name="cloud-computing-(1)-1 " style="border-radius:0px;border-width:1px;height:82px;left:919px;opacity:1;position:absolute;top:363px;transform:rotate(0deg);width:82px; ">
+            <div class="figma-group " id="upload_file_id ">
+                <div class="figma-group " id="upload_file_id ">
+                    <div class="figma-group " id="upload_file_id "><img id="upload_file_id_1 " src="/static/image_elements/svg_gif_elements/cloud-computing.svg " style="border-width:1px;height:56.687782287597656px;left:-2.410627348581329E-5px;opacity:1;position:absolute;top:8.812759399414062px;transform:rotate(0deg);width:81.99993133544922px; "></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="figma-rectangle" name="svg-elastic-progress-bars-1" style="background:center / contain no-repeat;border-radius:17px;border-width:1px;top:805px;width:549px;">
+            <div class="button_org" id="buttonClick">
+                <a>
+                    <span style="font-family: Quicksand;">Upload</span>
+                    <button class="button" id="uploadAnimationID" hidden></button>
+                    <svg class="load" version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 40 40" enable-background="new 0 0 40 40">
+                        <path opacity="0.3" fill="#fff" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                        s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                        c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+                        <path fill="#fff" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                        C22.32,8.481,24.301,9.057,26.013,10.047z">
+                        <animateTransform attributeType="xml"
+                        attributeName="transform"
+                        type="rotate"
+                        from="0 20 20"
+                        to="360 20 20"
+                        dur="0.5s"
+                        repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                    <svg class="check" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </a>
+                <div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- </a> -->
+        <!-- <div class="figma-rectangle " name="svg-elastic-progress-bars-1 " style="background:center / contain no-repeat url( '../_images/315e3e8b79dfb47555d93ce8a1a8f7a6cba7328b.png');border-radius:0px;border-width:1px;height:275px;left:1372px;opacity:1;position:absolute;top:805px;transform:rotate(0deg);width:549px; "></div> -->
+    </div>
+    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src="{{url_for( 'static', filename='js/upload_button.js' )}} "></script>
+    <form action="{{ url_for('timeline') }}" , methods="GET" hidden>
+        <input type="submit" id="route_to_timeline" hidden/>
+    </form>
+</body>
+
+</html>
