@@ -8,8 +8,8 @@ import pickle
 from flask_cors import CORS
 
 
-from flaskr.backend_files.scene_extraction import main_scene_extraction
-# from backend_files.scene_extraction import main_scene_extraction
+# from flaskr.backend_files.scene_extraction import main_scene_extraction
+from backend_files.scene_extraction import main_scene_extraction
 
 app = Flask(__name__, static_url_path='/static')
 sess = Session()
