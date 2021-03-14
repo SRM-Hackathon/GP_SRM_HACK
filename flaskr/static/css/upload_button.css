@@ -7,8 +7,8 @@ body {
 .button_org {
     border-radius: 28px;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 80%;
+    top: 80%;
     display: block;
     background: #fff;
     width: 150px;
