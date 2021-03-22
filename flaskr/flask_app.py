@@ -224,11 +224,11 @@ def send_data_to_spacy(methods = ['GET', 'POST']):
 
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    app.secret_key = 'imaya"s secret'
-    app.config['SESSION_TYPE'] = 'filesystem'
+#     app.secret_key = 'imaya"s secret'
+#     app.config['SESSION_TYPE'] = 'filesystem'
 
-    sess.init_app(app)
+#     sess.init_app(app)
 
-    app.run(host= '127.0.0.1', debug= True)
+#     app.run(host= '127.0.0.1', debug= True)
